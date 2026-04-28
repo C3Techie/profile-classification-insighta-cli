@@ -5,7 +5,7 @@ import ora from 'ora';
 import { Command } from 'commander';
 import { AxiosError } from 'axios';
 
-import { createApiClient, getBackendUrl } from '../lib/api';
+import { createApiClient } from '../lib/api';
 import { loadCredentials } from '../lib/credentials';
 import { renderTable, renderDetail } from '../lib/table';
 
@@ -63,7 +63,7 @@ export function registerProfileCommands(program: Command): void {
         const resp = await api.get('/api/profiles', { params });
         spinner.stop();
 
-        const { data, page, limit, total, total_pages } = resp.data;
+        const { data, page, total, total_pages } = resp.data;
         console.log(chalk.dim(`Page ${page} of ${total_pages} | ${total} total results\n`));
 
         const display = (data as Record<string, unknown>[]).map((p) => ({

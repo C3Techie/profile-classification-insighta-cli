@@ -8,7 +8,7 @@ import { Command } from 'commander';
 
 import { generateState, generateCodeVerifier, generateCodeChallenge } from '../lib/pkce';
 import { saveCredentials, loadCredentials, clearCredentials } from '../lib/credentials';
-import { getBackendUrl, createApiClient, resetApiClient } from '../lib/api';
+import { createApiClient, resetApiClient } from '../lib/api';
 import { renderDetail } from '../lib/table';
 
 const CLI_CALLBACK_PORT = 9876;

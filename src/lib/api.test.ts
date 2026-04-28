@@ -24,7 +24,7 @@ describe('CLI API Client', () => {
       refresh_token: 'def',
       username: 'test',
       role: 'admin'
-    } as any);
+    } as credentials.Credentials);
     
     const url = getBackendUrl();
     expect(url).toBe('http://custom-api.com');
